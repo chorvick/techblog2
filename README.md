@@ -18,7 +18,7 @@ Client and server side code for a basic tech blog that allows secure sign up, si
 
 ## Installation
 
-See the deployed project on heroku link above
+See the deployed project on heroku  [HERE](https://salty-sea-66996.herokuapp.com/)
 
 ## Usage
 

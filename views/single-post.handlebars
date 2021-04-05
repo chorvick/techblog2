@@ -1,6 +1,5 @@
 {{> post-info post}}
 
-{{!-- form and comments --}}
 {{#if loggedIn}}
 <div class="card">
   <h2 class="card-header">Comment</h2>
@@ -16,10 +15,10 @@
 </div>
 {{/if}}
 
-{{!-- div class comments from comments.handlebars --}}
+
 {{> comments post.comments}}
 
-{{!-- conditionally render --}}
+
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
 {{/if}}

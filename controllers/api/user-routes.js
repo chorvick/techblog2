@@ -50,7 +50,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // example {username: 'Lernantino', password: 'password1234'}
+
   User.create({
     username: req.body.username,
     password: req.body.password
@@ -71,7 +71,7 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-  // example {username: 'Lernantino, password: 'password1234'}
+
   User.findOne({
     where: {
       username: req.body.username,
@@ -112,7 +112,7 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  // example {username: 'Lernantino', password: 'password1234'}
+
   User.update(req.body, {
     individualHooks: true,
     where: {

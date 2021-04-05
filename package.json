@@ -1,7 +1,7 @@
 {
   "name": "techblog2",
   "version": "1.0.0",
-  "description": "",
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
   "main": "server.js",
   "dependencies": {
     "bcrypt": "^5.0.1",

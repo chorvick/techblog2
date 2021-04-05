@@ -1,70 +1,39 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-const bcrypt = require('bcrypt');
+// import all models
 
-class User extends Model {
+const Post = require('./Post');
 
+const User = require('./User');
 
-
-    checkPassword(loginPW) {
-        return bcrypt.compareSync(loginPW, this.password);
-    }
-}
+const Comment = require('./Comment');
 
 
+// create associations
+User.hasMany(Post, {
+  foreignKey: 'user_id'
+});
 
+Post.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
 
-User.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [3] /// for testing and proof of concept a 3 charachter password should be good enough
-            },
-        }
-    },
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
 
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id',
+  onDelete: 'CASCADE'
+});
 
+User.hasMany(Comment, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
 
+Post.hasMany(Comment, {
+  foreignKey: 'post_id'
+});
 
-    {
-        hooks: {
-            async beforeCreate(newUserData) {
-                newUserData.password = await bcrypt.hash(newUserData.password, 10);
-                return newUserData;
-
-            },
-            async beforeUpdate(updatedUserData) {
-                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-                return updatedUserData;
-            }
-        },
-
-
-
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'user',
-    }
-);
-
-
-
-
-
-
-module.exports = User;
+module.exports = { User, Post, Comment };

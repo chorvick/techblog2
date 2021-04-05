@@ -35,7 +35,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-// edit post
+// edit post code here
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({
     where: {
@@ -78,3 +78,5 @@ router.get('/new', (req, res) => {
 
 
 module.exports = router;
+
+//

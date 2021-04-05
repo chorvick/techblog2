@@ -35,7 +35,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-// edit post code here
+// edit post code her
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({
     where: {

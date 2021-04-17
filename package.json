@@ -31,5 +31,6 @@
   "bugs": {
     "url": "https://github.com/chorvick/techblog2/issues"
   },
-  "homepage": "https://github.com/chorvick/techblog2#readme"
+  "homepage": "https://github.com/chorvick/techblog2#readme",
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
 }

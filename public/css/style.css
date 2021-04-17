@@ -3,7 +3,7 @@
   --secondary: #beccb7;
   --tertiary: #606e6e;
   --light-dark: #968f96;
-  --dark: #351816;
+  --dark: #361412;
   --border-radius: 0.3rem;
 }
 
@@ -104,13 +104,6 @@ button:hover {
   font-size: 1.2rem;
 }
 
-.btn-back:hover {
-  color: var(--primary);
-  background-color: var(--tertiary);
-  transform: translate(0, 0);
-  box-shadow: 2px 2px var(--dark);
-}
-
 .hero {
   padding: 3% 4%;
   background-color: var(--dark);
@@ -156,6 +149,13 @@ button:hover {
   border-radius: var(--border-radius);
 }
 
+.btn-back:hover {
+  color: var(--primary);
+  background-color: var(--tertiary);
+  transform: translate(0, 0);
+  box-shadow: 2px 2px var(--dark);
+}
+
 .post {
   margin: 0 0 20px 0;
   border: 2px solid var(--dark);
@@ -197,10 +197,6 @@ h4 {
   color: var(--light-dark);
 }
 
-.login-link {
-  color: var(--dark);
-}
-
 .nav {
   padding: 10px;
   line-height: 1.25;
@@ -232,6 +228,10 @@ input:focus {
 textarea {
   min-width: 40%;
   min-height: 100px;
+}
+
+.login-link {
+  color: var(--dark);
 }
 
 .form-input {
